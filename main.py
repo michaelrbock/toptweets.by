@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+    return "Head to toptweets.by/username to see that user's top tweets"
 
 @app.route('/<screen_name>')
 def redirect_to_search(screen_name):
