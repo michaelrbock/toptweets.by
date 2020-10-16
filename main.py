@@ -1,5 +1,5 @@
 # [START gae_python38_app]
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, render_template, request, url_for
 
 
 # If `entrypoint` is not defined in app.yaml, App Engine will look for an app
@@ -8,9 +8,15 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return "Head to toptweets.by/username to see that user's top tweets"
+def root():
+    return render_template('index.html')
+
+
+@app.route('/', methods=['POST'])
+def root_post():
+    screen_name = request.form['screen_name']
+    return redirect(twitter_search_url(screen_name))
+
 
 @app.route('/<screen_name>')
 def redirect_to_search(screen_name):
@@ -24,6 +30,7 @@ def redirect_with_at(screen_name):
 
 def twitter_search_url(screen_name):
     return f"https://twitter.com/search?q=from%3A{screen_name}%20min_faves%3A100&f=live"
+
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
