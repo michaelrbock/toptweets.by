@@ -23,7 +23,7 @@ def redirect_with_at(screen_name):
 
 
 def twitter_search_url(screen_name):
-    return f"https://twitter.com/search?q=from%3A{screen_name}%20min_faves%3A50"
+    return f"https://twitter.com/search?q=from%3A{screen_name}%20min_faves%3A100&f=live"
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
