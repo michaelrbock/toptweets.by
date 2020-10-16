@@ -1,4 +1,12 @@
-# besttweets
+# TopTweets.by
+
+Online at [TopTweets.by](https://toptweets.by)
+
+## Tech stack
+
+* Flask
+* Google App Engine
+* Cloudflare
 
 ## Install/Run
 
