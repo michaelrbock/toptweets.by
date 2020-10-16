@@ -1,7 +1,7 @@
 runtime: python38
 
 handlers:
-- url: /.*
+- url: /
   secure: always
   redirect_http_response_code: 301
   script: auto
